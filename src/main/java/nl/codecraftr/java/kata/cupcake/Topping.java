@@ -1,6 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
-sealed abstract class Topping implements Consumable permits Chocolate, Nuts {
+sealed abstract class Topping implements Consumable permits Candies, Chocolate, Nuts {
 
   private final Consumable consumable;
 

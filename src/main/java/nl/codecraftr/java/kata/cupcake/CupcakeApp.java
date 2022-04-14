@@ -12,7 +12,9 @@ public class CupcakeApp {
    * Cli runner.
    */
   public static void main(String[] args) {
-    new CupcakeApp().presentCupcakes(List.of(new Cupcake()))
+    new CupcakeApp().presentCupcakes(List.of(
+            new Candies(new Nuts(new Chocolate(new Cupcake())))
+        ))
         .forEach(System.out::println);
   }
 
