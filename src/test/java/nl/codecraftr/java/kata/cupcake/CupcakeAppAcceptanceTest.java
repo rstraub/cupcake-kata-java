@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 public class CupcakeAppAcceptanceTest {
   @Test
   void shouldReturnReadableCupcakes() {
-    var products = List.of(new Cupcake(), new Cupcake());
-    var expected = List.of("🧁", "🧁");
+    var products = List.of(new Cupcake(), new Cookie());
+    var expected = List.of("🧁", "🍪");
 
     assertThat(new CupcakeApp().presentCupcakes(products)).isEqualTo(expected);
   }

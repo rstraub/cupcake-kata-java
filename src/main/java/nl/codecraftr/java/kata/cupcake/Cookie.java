@@ -1,8 +1,8 @@
 package nl.codecraftr.java.kata.cupcake;
 
-public class Cupcake implements Consumable {
+public class Cookie implements Consumable {
   @Override
   public String name() {
-    return "🧁";
+    return "";
   }
 }
