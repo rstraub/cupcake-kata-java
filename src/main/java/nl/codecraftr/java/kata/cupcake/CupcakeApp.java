@@ -19,7 +19,7 @@ public class CupcakeApp {
 
   public List<String> presentCupcakes(List<Cupcake> products) {
     return products.stream()
-        .map(Cupcake::toString)
+        .map(Cupcake::name)
         .collect(Collectors.toList());
   }
 }

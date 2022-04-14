@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 public class CupcakeTest {
 
   @Test
-  void shouldReturnReadableOutput() {
-    var result = new Cupcake().toString();
+  void shouldReturnName() {
+    var result = new Cupcake().name();
 
     assertThat(result).isEqualTo("🧁");
   }
