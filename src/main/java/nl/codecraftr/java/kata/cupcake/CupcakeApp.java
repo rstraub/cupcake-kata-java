@@ -11,10 +11,10 @@ public class CupcakeApp {
    * Cli runner.
    */
   public static void main(String[] args) {
-    new CupcakeApp().presentCupcakes().forEach(System.out::println);
+    new CupcakeApp().presentCupcakes(List.of(new Cupcake())).forEach(System.out::println);
   }
 
-  public List<String> presentCupcakes() {
+  public List<String> presentCupcakes(List<Cupcake> products) {
     return List.of("🧁");
   }
 }
