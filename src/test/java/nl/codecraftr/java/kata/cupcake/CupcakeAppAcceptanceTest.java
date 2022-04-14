@@ -6,14 +6,21 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 class CupcakeAppAcceptanceTest {
+
   @Test
-  void shouldReturnReadableCupcakes() {
+  void shouldReturnReadableConsumables() {
     var products = List.of(
         new Cupcake(),
         new Cookie(),
-        new Chocolate(new Cupcake())
+        new Chocolate(new Cupcake()),
+        new Chocolate(new Cookie())
     );
-    var expected = List.of("🧁", "🍪", "🧁 with 🍫");
+    var expected = List.of(
+        "🧁",
+        "🍪",
+        "🧁 with 🍫",
+        "🍪 with 🍫"
+    );
 
     assertThat(new CupcakeApp().presentCupcakes(products)).isEqualTo(expected);
   }
