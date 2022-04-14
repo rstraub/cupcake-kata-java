@@ -13,13 +13,15 @@ class CupcakeAppAcceptanceTest {
         new Cupcake(),
         new Cookie(),
         new Chocolate(new Cupcake()),
-        new Chocolate(new Cookie())
+        new Chocolate(new Cookie()),
+        new Nuts(new Cupcake())
     );
     var expected = List.of(
         "🧁",
         "🍪",
         "🧁 with 🍫",
-        "🍪 with 🍫"
+        "🍪 with 🍫",
+        "🧁 with 🥜"
     );
 
     assertThat(new CupcakeApp().presentCupcakes(products)).isEqualTo(expected);
