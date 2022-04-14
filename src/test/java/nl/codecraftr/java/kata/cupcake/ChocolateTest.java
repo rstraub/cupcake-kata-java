@@ -10,6 +10,6 @@ class ChocolateTest {
   void shouldReturnName() {
     var result = new Chocolate(new Cupcake()).name();
 
-    assertThat(result).isEqualTo("🍫");
+    assertThat(result).isEqualTo("🧁 with 🍫");
   }
 }
