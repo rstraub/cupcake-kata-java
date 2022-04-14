@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 public class CupcakeTest {
 
   @Test
-  void shouldUnitTest() {
-    CupcakeApp.main(new String[0]);
+  void shouldReturnReadableOutput() {
+    var result = new Cupcake().toString();
 
-    assertThat(true).isTrue();
+    assertThat(result).isEqualTo("🧁");
   }
 }
