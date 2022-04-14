@@ -4,10 +4,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class CookieTest {
+class ChocolateTest {
 
   @Test
   void shouldReturnName() {
-    assertThat(new Cookie().name()).isEqualTo("🍪");
+    var result = new Chocolate(new Cupcake()).name();
+
+    assertThat(result).isEqualTo("🍫");
   }
 }
