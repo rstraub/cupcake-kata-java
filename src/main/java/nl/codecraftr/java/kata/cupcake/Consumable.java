@@ -1,5 +1,5 @@
 package nl.codecraftr.java.kata.cupcake;
 
-public interface Consumable {
+sealed public interface Consumable permits Topping, Cupcake, Cookie {
   String name();
 }

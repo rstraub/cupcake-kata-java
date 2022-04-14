@@ -1,14 +1,13 @@
 package nl.codecraftr.java.kata.cupcake;
 
-public class Chocolate implements Consumable {
-  private final Consumable consumable;
+final public class Chocolate extends Topping {
 
   public Chocolate(Consumable consumable) {
-    this.consumable = consumable;
+    super(consumable);
   }
 
   @Override
   public String name() {
-    return consumable.name() + " with 🍫";
+    return super.name() + "🍫";
   }
 }

@@ -24,6 +24,8 @@ class CupcakeAppAcceptanceTest {
         "🧁 with 🥜"
     );
 
-    assertThat(new CupcakeApp().presentCupcakes(products)).isEqualTo(expected);
+    var result = new CupcakeApp().presentCupcakes(products);
+
+    assertThat(result).isEqualTo(expected);
   }
 }

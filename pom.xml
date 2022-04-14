@@ -41,10 +41,10 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <configuration>
           <configLocation>google_checks.xml</configLocation>
-          <consoleOutput>true</consoleOutput>
+          <consoleOutput>false</consoleOutput>
           <encoding>UTF-8</encoding>
-          <failsOnError>false</failsOnError>
-          <violationSeverity>warning</violationSeverity>
+          <failsOnError>true</failsOnError>
+          <violationSeverity>error</violationSeverity>
         </configuration>
         <dependencies>
           <dependency>
