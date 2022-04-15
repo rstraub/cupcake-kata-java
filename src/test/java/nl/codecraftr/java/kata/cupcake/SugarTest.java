@@ -4,19 +4,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class CandiesTest {
+class SugarTest {
 
-  private final Candies candies = new Candies(new Cookie());
+  private final Sugar sugar = new Sugar(new Cookie());
 
   @Test
   void shouldReturnDescription() {
-    var result = candies.description();
+    var result = sugar.description();
 
     assertThat(result).isEqualTo("🍪 with 🍬");
   }
 
   @Test
   void shouldReturnPrice() {
-    assertThat(candies.price()).isEqualTo(2.15);
+    assertThat(sugar.price()).isEqualTo(2.15);
   }
 }

@@ -15,8 +15,8 @@ class CupcakeAppAcceptanceTest {
         new Chocolate(new Cupcake()),
         new Chocolate(new Cookie()),
         new Nuts(new Cupcake()),
-        new Candies(new Chocolate(new Cupcake())),
-        new Candies(new Nuts(new Chocolate(new Cupcake()))),
+        new Sugar(new Chocolate(new Cupcake())),
+        new Sugar(new Nuts(new Chocolate(new Cupcake()))),
         new Bundle(new Bundle(new Cupcake(), new Cookie()), new Nuts(new Cupcake()))
     );
     var expected = List.of(
@@ -43,7 +43,7 @@ class CupcakeAppAcceptanceTest {
         new Chocolate(new Cupcake()),
         new Chocolate(new Cookie()),
         new Nuts(new Cookie()),
-        new Candies(new Cupcake()),
+        new Sugar(new Cupcake()),
         new Bundle(new Bundle(new Cupcake(), new Cookie()), new Nuts(new Cupcake()))
     );
 

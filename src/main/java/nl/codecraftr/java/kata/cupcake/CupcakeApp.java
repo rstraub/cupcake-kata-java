@@ -17,7 +17,7 @@ public class CupcakeApp {
    */
   public static void main(String[] args) {
     new CupcakeApp().presentCupcakes(List.of(
-            new Candies(new Nuts(new Chocolate(new Cupcake())))
+            new Sugar(new Nuts(new Chocolate(new Cupcake())))
         ))
         .forEach(System.out::println);
   }

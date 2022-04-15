@@ -1,6 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
-sealed abstract class Topping implements Cake permits Candies, Chocolate, Nuts {
+sealed abstract class Topping implements Cake permits Sugar, Chocolate, Nuts {
 
   private static final String INITIAL_JOIN_WORD = "with";
   private static final String SUBSEQUENT_JOIN_WORD = "and";

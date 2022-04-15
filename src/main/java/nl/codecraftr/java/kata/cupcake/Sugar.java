@@ -1,8 +1,8 @@
 package nl.codecraftr.java.kata.cupcake;
 
-final public class Candies extends Topping {
+final public class Sugar extends Topping {
 
-  public Candies(Cake cake) {
+  public Sugar(Cake cake) {
     super(cake);
   }
 
