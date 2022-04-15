@@ -23,4 +23,9 @@ sealed abstract class Topping implements Consumable permits Candies, Chocolate, 
         SUBSEQUENT_JOIN_WORD :
         INITIAL_JOIN_WORD;
   }
+
+  @Override
+  public double price() {
+    return consumable.price();
+  }
 }

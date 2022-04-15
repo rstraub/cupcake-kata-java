@@ -6,10 +6,17 @@ import org.junit.jupiter.api.Test;
 
 class ChocolateTest {
 
+  private final Chocolate chocolate = new Chocolate(new Cupcake());
+
   @Test
   void shouldReturnDescription() {
-    var result = new Chocolate(new Cupcake()).description();
+    var result = chocolate.description();
 
     assertThat(result).isEqualTo("🧁 with 🍫");
+  }
+
+  @Test
+  void shouldReturnPrice() {
+    assertThat(chocolate.price()).isEqualTo(1.1);
   }
 }

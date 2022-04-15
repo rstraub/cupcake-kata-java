@@ -26,6 +26,9 @@ public class CupcakeApp {
   }
 
   public List<String> presentPrices(List<Consumable> consumables) {
-    return Collections.emptyList();
+    return consumables.stream()
+        .map(Consumable::price)
+        .map(Object::toString)
+        .collect(Collectors.toList());
   }
 }
