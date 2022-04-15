@@ -11,8 +11,8 @@ class BundleTest {
     var cupcakeBundle = new Bundle(new Chocolate(new Cupcake()));
     var cookieBundle = new Bundle(new Nuts(new Cookie()));
 
-    assertThat(cupcakeBundle.description()).isEqualTo("1 🧁");
-    assertThat(cookieBundle.description()).isEqualTo("1 🍪");
+    assertThat(cupcakeBundle.description()).isEqualTo("📦 of 1 🧁");
+    assertThat(cookieBundle.description()).isEqualTo("📦 of 1 🍪");
   }
 
   @Test
@@ -20,8 +20,8 @@ class BundleTest {
     var cupcakeBundle = new Bundle(new Cupcake(), new Cupcake());
     var cookieBundle = new Bundle(new Cookie(), new Cookie());
 
-    assertThat(cupcakeBundle.description()).isEqualTo("2 🧁");
-    assertThat(cookieBundle.description()).isEqualTo("2 🍪");
+    assertThat(cupcakeBundle.description()).isEqualTo("📦 of 2 🧁");
+    assertThat(cookieBundle.description()).isEqualTo("📦 of 2 🍪");
   }
 
   @Test
@@ -29,7 +29,7 @@ class BundleTest {
     var mixedBundle = new Bundle(new Cupcake(), new Cupcake(), new Cookie());
 
     assertThat(mixedBundle.description()).isEqualTo(
-        "1 🍪, 2 🧁"
+        "📦 of 1 🍪, 2 🧁"
     );
   }
 
@@ -37,7 +37,12 @@ class BundleTest {
   void shouldDescribeBundleGivenBundleAndProduct() {
     var bundleOfBundle = new Bundle(
         new Bundle(new Cupcake(), new Cupcake()),
+        new Bundle(new Cupcake(), new Cookie()),
         new Cupcake()
+    );
+
+    assertThat(bundleOfBundle.description()).isEqualTo(
+        "📦 of 2 📦, 1 🧁"
     );
   }
 
@@ -48,6 +53,6 @@ class BundleTest {
 
   @Test
   void shouldReturnName() {
-    assertThat(new Bundle().name()).isEqualTo("bundle");
+    assertThat(new Bundle().name()).isEqualTo("📦");
   }
 }

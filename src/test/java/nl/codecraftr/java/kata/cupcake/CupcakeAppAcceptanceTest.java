@@ -27,7 +27,7 @@ class CupcakeAppAcceptanceTest {
         "🧁 with 🥜",
         "🧁 with 🍫 and 🍬",
         "🧁 with 🍫 and 🥜 and 🍬",
-        "1 🧁"
+        "📦 of 1 🧁"
     );
 
     var result = new CupcakeApp().presentCupcakes(consumables);

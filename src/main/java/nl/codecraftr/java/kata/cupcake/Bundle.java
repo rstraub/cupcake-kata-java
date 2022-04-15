@@ -16,7 +16,7 @@ public final class Bundle implements Product {
 
   @Override
   public String description() {
-    return products.entrySet().stream()
+    return name() + " of " + products.entrySet().stream()
         .sorted(Entry.comparingByKey())
         .map(e -> e.getValue().size() + " " + e.getKey())
         .collect(Collectors.joining(", "));
@@ -29,6 +29,6 @@ public final class Bundle implements Product {
 
   @Override
   public String name() {
-    return "bundle";
+    return "📦";
   }
 }
