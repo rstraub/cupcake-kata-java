@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 
 public final class Bundle implements Product {
 
-  private final Map<String, List<Cake>> products;
+  private final Map<String, List<Product>> products;
 
-  public Bundle(Cake... cakes) {
-    this.products = Arrays.stream(cakes).collect(Collectors.groupingBy(Cake::cakeName));
+  public Bundle(Product... products) {
+    this.products = Arrays.stream(products).collect(Collectors.groupingBy(Product::name));
   }
 
   @Override
@@ -25,5 +25,10 @@ public final class Bundle implements Product {
   @Override
   public double price() {
     return 0;
+  }
+
+  @Override
+  public String name() {
+    return "bundle";
   }
 }

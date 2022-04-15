@@ -15,7 +15,7 @@ final public class Cupcake implements Cake {
   }
 
   @Override
-  public String cakeName() {
+  public String name() {
     return name;
   }
 }

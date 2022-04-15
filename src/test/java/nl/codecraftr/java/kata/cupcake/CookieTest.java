@@ -18,7 +18,7 @@ class CookieTest {
 
   @Test
   void shouldReturnName() {
-    var result = new Cookie().cakeName();
+    var result = new Cookie().name();
 
     assertThat(result).isEqualTo("🍪");
   }

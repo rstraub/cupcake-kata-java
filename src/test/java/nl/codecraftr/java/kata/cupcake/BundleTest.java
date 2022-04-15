@@ -34,6 +34,20 @@ class BundleTest {
   }
 
   @Test
+  void shouldDescribeBundleGivenBundleAndProduct() {
+    var bundleOfBundle = new Bundle(
+        new Bundle(new Cupcake(), new Cupcake()),
+        new Cupcake()
+    );
+  }
+
+  // TODO
+  @Test
   void price() {
+  }
+
+  @Test
+  void shouldReturnName() {
+    assertThat(new Bundle().name()).isEqualTo("bundle");
   }
 }

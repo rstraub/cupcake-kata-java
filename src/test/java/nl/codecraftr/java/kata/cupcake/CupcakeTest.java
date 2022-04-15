@@ -20,7 +20,7 @@ class CupcakeTest {
 
   @Test
   void shouldReturnName() {
-    var result = new Cupcake().cakeName();
+    var result = new Cupcake().name();
 
     assertThat(result).isEqualTo("🧁");
   }
