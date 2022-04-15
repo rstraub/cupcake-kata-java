@@ -6,5 +6,4 @@ sealed public interface Product permits Bundle, Cake {
 
   double price();
 
-  String name();
 }

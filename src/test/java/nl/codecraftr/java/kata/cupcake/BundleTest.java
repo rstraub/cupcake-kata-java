@@ -11,8 +11,8 @@ class BundleTest {
     var cupcakeBundle = new Bundle(new Chocolate(new Cupcake()));
     var cookieBundle = new Bundle(new Nuts(new Cookie()));
 
-    assertThat(cupcakeBundle.description()).isEqualTo("📦 of 1 🧁");
-    assertThat(cookieBundle.description()).isEqualTo("📦 of 1 🍪");
+    assertThat(cupcakeBundle.description()).isEqualTo("📦 of 1 🧁 with 🍫");
+    assertThat(cookieBundle.description()).isEqualTo("📦 of 1 🍪 with 🥜");
   }
 
   @Test
@@ -36,23 +36,30 @@ class BundleTest {
   @Test
   void shouldDescribeBundleGivenBundleAndProduct() {
     var bundleOfBundle = new Bundle(
-        new Bundle(new Cupcake(), new Cupcake()),
-        new Bundle(new Cupcake(), new Cookie()),
+        new Bundle(new Cookie(), new Cupcake()),
+        new Bundle(new Cookie(), new Cookie()),
         new Cupcake()
     );
 
     assertThat(bundleOfBundle.description()).isEqualTo(
-        "📦 of 2 📦, 1 🧁"
+        "📦 of 1 📦 of 1 🍪, 1 🧁, 1 📦 of 2 🍪, 1 🧁"
+    );
+  }
+
+  @Test
+  void shouldDescribeGroupedBundleGivenBundlesWithSameProduct() {
+    var bundleOfBundle = new Bundle(
+        new Bundle(new Cookie(), new Cupcake()),
+        new Bundle(new Cupcake(), new Cookie())
+    );
+
+    assertThat(bundleOfBundle.description()).isEqualTo(
+        "📦 of 2 📦 of 1 🍪, 1 🧁"
     );
   }
 
   // TODO
   @Test
   void price() {
-  }
-
-  @Test
-  void shouldReturnName() {
-    assertThat(new Bundle().name()).isEqualTo("📦");
   }
 }

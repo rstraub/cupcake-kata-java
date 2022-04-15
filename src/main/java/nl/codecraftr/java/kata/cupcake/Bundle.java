@@ -11,12 +11,12 @@ public final class Bundle implements Product {
   private final Map<String, List<Product>> products;
 
   public Bundle(Product... products) {
-    this.products = Arrays.stream(products).collect(Collectors.groupingBy(Product::name));
+    this.products = Arrays.stream(products).collect(Collectors.groupingBy(Product::description));
   }
 
   @Override
   public String description() {
-    return name() + " of " + products.entrySet().stream()
+    return "📦 of " + products.entrySet().stream()
         .sorted(Entry.comparingByKey())
         .map(e -> e.getValue().size() + " " + e.getKey())
         .collect(Collectors.joining(", "));
@@ -25,10 +25,5 @@ public final class Bundle implements Product {
   @Override
   public double price() {
     return 0;
-  }
-
-  @Override
-  public String name() {
-    return "📦";
   }
 }

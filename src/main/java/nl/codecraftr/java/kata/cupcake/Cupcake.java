@@ -13,9 +13,4 @@ final public class Cupcake implements Cake {
   public double price() {
     return 1.0;
   }
-
-  @Override
-  public String name() {
-    return name;
-  }
 }

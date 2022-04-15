@@ -15,11 +15,4 @@ class CookieTest {
   void shouldReturnPrice() {
     assertThat(new Cookie().price()).isEqualTo(2.0);
   }
-
-  @Test
-  void shouldReturnName() {
-    var result = new Cookie().name();
-
-    assertThat(result).isEqualTo("🍪");
-  }
 }

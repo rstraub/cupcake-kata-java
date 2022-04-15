@@ -13,9 +13,4 @@ final public class Cookie implements Cake {
   public double price() {
     return 2.0;
   }
-
-  @Override
-  public String name() {
-    return name;
-  }
 }

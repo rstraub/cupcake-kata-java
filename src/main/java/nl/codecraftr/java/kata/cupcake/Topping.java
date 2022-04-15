@@ -29,8 +29,4 @@ sealed abstract class Topping implements Cake permits Candies, Chocolate, Nuts {
     return cake.price();
   }
 
-  @Override
-  public String name() {
-    return this.cake.name();
-  }
 }
