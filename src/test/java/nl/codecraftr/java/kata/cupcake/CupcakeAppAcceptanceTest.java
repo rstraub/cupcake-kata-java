@@ -17,7 +17,7 @@ class CupcakeAppAcceptanceTest {
         new Nuts(new Cupcake()),
         new Candies(new Chocolate(new Cupcake())),
         new Candies(new Nuts(new Chocolate(new Cupcake()))),
-        new Bundle(new Cupcake())
+        new Bundle(new Bundle(new Cupcake(), new Cookie()), new Nuts(new Cupcake()))
     );
     var expected = List.of(
         "🧁",
@@ -27,7 +27,7 @@ class CupcakeAppAcceptanceTest {
         "🧁 with 🥜",
         "🧁 with 🍫 and 🍬",
         "🧁 with 🍫 and 🥜 and 🍬",
-        "📦 of 1 🧁"
+        "📦 of 1 📦 of 1 🍪, 1 🧁, 1 🧁 with 🥜"
     );
 
     var result = new CupcakeApp().presentCupcakes(consumables);
