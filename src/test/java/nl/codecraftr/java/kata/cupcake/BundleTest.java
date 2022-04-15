@@ -58,8 +58,20 @@ class BundleTest {
     );
   }
 
-  // TODO
   @Test
-  void price() {
+  void shouldPriceAllProductsGivenBundle() {
+    var cupcakeBundle = new Bundle(new Cupcake(), new Cookie());
+
+    assertThat(cupcakeBundle.price()).isEqualTo(3.0);
+  }
+
+  @Test
+  void shouldPriceAllProductsGivenBundleOfBundles() {
+    var cupcakeBundle = new Bundle(
+        new Bundle(new Cupcake(), new Cookie()),  // 3.0
+        new Cupcake()                             // 1.0
+    );
+
+    assertThat(cupcakeBundle.price()).isEqualTo(4.0);
   }
 }

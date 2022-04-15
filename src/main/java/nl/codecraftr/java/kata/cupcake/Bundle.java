@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 
 public final class Bundle implements Product {
 
-  private final Map<String, List<Product>> products;
+  private final Map<String, List<Product>> groupedProducts;
 
   public Bundle(Product... products) {
-    this.products = Arrays.stream(products).collect(Collectors.groupingBy(Product::description));
+    groupedProducts = Arrays.stream(products).collect(Collectors.groupingBy(Product::description));
   }
 
   @Override
   public String description() {
-    return "📦 of " + products.entrySet().stream()
+    return "📦 of " + groupedProducts.entrySet().stream()
         .sorted(Entry.comparingByKey())
         .map(e -> e.getValue().size() + " " + e.getKey())
         .collect(Collectors.joining(", "));
@@ -24,6 +24,8 @@ public final class Bundle implements Product {
 
   @Override
   public double price() {
-    return 0;
+    return groupedProducts.values().stream()
+        .flatMapToDouble(products -> products.stream().mapToDouble(Product::price))
+        .sum();
   }
 }
