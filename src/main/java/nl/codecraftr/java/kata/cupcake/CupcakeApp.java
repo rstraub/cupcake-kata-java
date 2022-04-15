@@ -22,15 +22,15 @@ public class CupcakeApp {
         .forEach(System.out::println);
   }
 
-  public List<String> presentCupcakes(List<Consumable> consumables) {
-    return consumables.stream()
-        .map(Consumable::description)
+  public List<String> presentCupcakes(List<Product> products) {
+    return products.stream()
+        .map(Product::description)
         .collect(Collectors.toList());
   }
 
-  public List<String> presentPrices(List<Consumable> consumables) {
-    return consumables.stream()
-        .map(Consumable::price)
+  public List<String> presentPrices(List<Product> products) {
+    return products.stream()
+        .map(Product::price)
         .map(numberFormatter::format)
         .collect(Collectors.toList());
   }

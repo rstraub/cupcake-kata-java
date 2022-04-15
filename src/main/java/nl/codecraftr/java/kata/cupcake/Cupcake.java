@@ -1,6 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
-final public class Cupcake implements Consumable {
+final public class Cupcake implements Product {
 
   @Override
   public String description() {

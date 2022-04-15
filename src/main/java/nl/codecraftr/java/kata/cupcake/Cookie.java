@@ -1,6 +1,7 @@
 package nl.codecraftr.java.kata.cupcake;
 
-final public class Cookie implements Consumable {
+final public class Cookie implements Product {
+
   @Override
   public String description() {
     return "🍪";
