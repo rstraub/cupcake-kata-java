@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 class CupcakeAppAcceptanceTest {
 
   @Test
-  void shouldReturnNamesForConsumables() {
+  void shouldDescribeProducts() {
     var consumables = List.of(
         new Cupcake(),
         new Cookie(),
@@ -16,7 +16,8 @@ class CupcakeAppAcceptanceTest {
         new Chocolate(new Cookie()),
         new Nuts(new Cupcake()),
         new Candies(new Chocolate(new Cupcake())),
-        new Candies(new Nuts(new Chocolate(new Cupcake())))
+        new Candies(new Nuts(new Chocolate(new Cupcake()))),
+        new Bundle(new Cupcake())
     );
     var expected = List.of(
         "🧁",
@@ -25,7 +26,8 @@ class CupcakeAppAcceptanceTest {
         "🍪 with 🍫",
         "🧁 with 🥜",
         "🧁 with 🍫 and 🍬",
-        "🧁 with 🍫 and 🥜 and 🍬"
+        "🧁 with 🍫 and 🥜 and 🍬",
+        "1 🧁"
     );
 
     var result = new CupcakeApp().presentCupcakes(consumables);
@@ -34,7 +36,7 @@ class CupcakeAppAcceptanceTest {
   }
 
   @Test
-  void shouldReturnPricesForConsumables() {
+  void shouldPriceProducts() {
     var consumables = List.of(
         new Cupcake(),
         new Cookie(),
