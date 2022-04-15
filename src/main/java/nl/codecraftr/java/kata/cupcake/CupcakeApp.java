@@ -1,13 +1,16 @@
 package nl.codecraftr.java.kata.cupcake;
 
-import java.util.Collections;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 /**
  * Kata Main Class.
  */
 public class CupcakeApp {
+
+  private static final NumberFormat numberFormatter = NumberFormat.getCurrencyInstance(Locale.US);
 
   /**
    * Cli runner.
@@ -28,7 +31,7 @@ public class CupcakeApp {
   public List<String> presentPrices(List<Consumable> consumables) {
     return consumables.stream()
         .map(Consumable::price)
-        .map(Object::toString)
+        .map(numberFormatter::format)
         .collect(Collectors.toList());
   }
 }
