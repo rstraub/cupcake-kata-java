@@ -17,4 +17,11 @@ class CupcakeTest {
   void shouldReturnPrice() {
     assertThat(new Cupcake().price()).isEqualTo(1.0);
   }
+
+  @Test
+  void shouldReturnName() {
+    var result = new Cupcake().cakeName();
+
+    assertThat(result).isEqualTo("🧁");
+  }
 }

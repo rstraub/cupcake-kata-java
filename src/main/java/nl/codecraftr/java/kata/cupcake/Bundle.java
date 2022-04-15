@@ -5,15 +5,15 @@ import java.util.List;
 
 public final class Bundle implements Product {
 
-  private final List<Product> products;
+  private final List<Cake> cakes;
 
-  public Bundle(Product... products) {
-    this.products = Arrays.stream(products).toList();
+  public Bundle(Cake... cakes) {
+    this.cakes = Arrays.stream(cakes).toList();
   }
 
   @Override
   public String description() {
-    return products.size() + " " + products.get(0).description();
+    return cakes.size() + " " + cakes.get(0).cakeName();
   }
 
   @Override
