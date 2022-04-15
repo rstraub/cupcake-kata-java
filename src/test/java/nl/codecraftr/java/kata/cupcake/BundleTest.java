@@ -25,6 +25,15 @@ class BundleTest {
   }
 
   @Test
+  void shouldDescribeBundleGivenMultipleProducts() {
+    var mixedBundle = new Bundle(new Cupcake(), new Cupcake(), new Cookie());
+
+    assertThat(mixedBundle.description()).isEqualTo(
+        "1 🍪, 2 🧁"
+    );
+  }
+
+  @Test
   void price() {
   }
 }

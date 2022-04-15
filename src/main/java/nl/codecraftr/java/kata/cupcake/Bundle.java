@@ -2,18 +2,24 @@ package nl.codecraftr.java.kata.cupcake;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 public final class Bundle implements Product {
 
-  private final List<Cake> cakes;
+  private final Map<String, List<Cake>> products;
 
   public Bundle(Cake... cakes) {
-    this.cakes = Arrays.stream(cakes).toList();
+    this.products = Arrays.stream(cakes).collect(Collectors.groupingBy(Cake::cakeName));
   }
 
   @Override
   public String description() {
-    return cakes.size() + " " + cakes.get(0).cakeName();
+    return products.entrySet().stream()
+        .sorted(Entry.comparingByKey())
+        .map(e -> e.getValue().size() + " " + e.getKey())
+        .collect(Collectors.joining(", "));
   }
 
   @Override
