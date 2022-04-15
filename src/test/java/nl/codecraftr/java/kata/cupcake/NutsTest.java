@@ -6,10 +6,17 @@ import org.junit.jupiter.api.Test;
 
 class NutsTest {
 
+  private final Nuts nuts = new Nuts(new Cookie());
+
   @Test
   void shouldReturnDescription() {
-    var result = new Nuts(new Cookie()).description();
+    var result = nuts.description();
 
     assertThat(result).isEqualTo("🍪 with 🥜");
+  }
+
+  @Test
+  void shouldReturnPrice() {
+    assertThat(nuts.price()).isEqualTo(2.2);
   }
 }

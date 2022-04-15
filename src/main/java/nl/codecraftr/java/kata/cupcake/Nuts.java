@@ -12,6 +12,6 @@ final public class Nuts extends Topping {
 
   @Override
   public double price() {
-    return 0;
+    return super.price() + 0.2;
   }
 }
