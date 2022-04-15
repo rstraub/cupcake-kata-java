@@ -10,4 +10,9 @@ final public class Candies extends Topping {
   public String description() {
     return super.description() + "🍬";
   }
+
+  @Override
+  public double price() {
+    return 0;
+  }
 }

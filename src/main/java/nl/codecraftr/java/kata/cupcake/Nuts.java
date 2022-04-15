@@ -9,4 +9,9 @@ final public class Nuts extends Topping {
   public String description() {
     return super.description() + "🥜";
   }
+
+  @Override
+  public double price() {
+    return 0;
+  }
 }

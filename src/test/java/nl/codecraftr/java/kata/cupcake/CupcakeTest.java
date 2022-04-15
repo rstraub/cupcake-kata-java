@@ -12,4 +12,9 @@ class CupcakeTest {
 
     assertThat(result).isEqualTo("🧁");
   }
+
+  @Test
+  void shouldReturnPrice() {
+    assertThat(new Cupcake().price()).isEqualTo(1.0);
+  }
 }
