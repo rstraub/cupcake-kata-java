@@ -16,6 +16,13 @@ class BundleTest {
   }
 
   @Test
+  void shouldDescribeBundleGivenMultiplesOfOneProduct() {
+    var cupcakeBundle = new Bundle(new Cupcake(), new Cupcake());
+
+    assertThat(cupcakeBundle.description()).isEqualTo("2 🧁");
+  }
+
+  @Test
   void price() {
   }
 }
