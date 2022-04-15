@@ -43,7 +43,8 @@ class CupcakeAppAcceptanceTest {
         new Chocolate(new Cupcake()),
         new Chocolate(new Cookie()),
         new Nuts(new Cookie()),
-        new Candies(new Cupcake())
+        new Candies(new Cupcake()),
+        new Bundle(new Bundle(new Cupcake(), new Cookie()), new Nuts(new Cupcake()))
     );
 
     var expected = List.of(
@@ -52,7 +53,8 @@ class CupcakeAppAcceptanceTest {
         "$1.10",
         "$2.10",
         "$2.20",
-        "$1.15"
+        "$1.15",
+        "$4.20"
     );
 
     var result = new CupcakeApp().presentPrices(consumables);
