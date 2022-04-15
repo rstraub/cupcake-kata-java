@@ -1,6 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
-sealed public interface Product permits Bundle, Cookie, Cupcake, Topping {
+sealed public interface Product permits Bundle, Cake {
 
   String description();
 

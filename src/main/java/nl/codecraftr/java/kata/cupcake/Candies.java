@@ -2,8 +2,8 @@ package nl.codecraftr.java.kata.cupcake;
 
 final public class Candies extends Topping {
 
-  public Candies(Product product) {
-    super(product);
+  public Candies(Cake cake) {
+    super(cake);
   }
 
   @Override
