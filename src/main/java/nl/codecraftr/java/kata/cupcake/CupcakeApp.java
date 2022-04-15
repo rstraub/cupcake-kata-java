@@ -1,5 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,11 @@ public class CupcakeApp {
 
   public List<String> presentCupcakes(List<Consumable> consumables) {
     return consumables.stream()
-        .map(Consumable::name)
+        .map(Consumable::description)
         .collect(Collectors.toList());
+  }
+
+  public List<String> presentPrices(List<Consumable> consumables) {
+    return Collections.emptyList();
   }
 }

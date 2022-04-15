@@ -6,7 +6,7 @@ final public class Nuts extends Topping {
   }
 
   @Override
-  public String name() {
-    return super.name() + "🥜";
+  public String description() {
+    return super.description() + "🥜";
   }
 }

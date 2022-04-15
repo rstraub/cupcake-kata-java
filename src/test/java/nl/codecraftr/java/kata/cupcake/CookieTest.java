@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class CookieTest {
 
   @Test
-  void shouldReturnName() {
-    assertThat(new Cookie().name()).isEqualTo("🍪");
+  void shouldReturnDescription() {
+    assertThat(new Cookie().description()).isEqualTo("🍪");
   }
 }

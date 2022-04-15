@@ -11,15 +11,15 @@ sealed abstract class Topping implements Consumable permits Candies, Chocolate, 
   }
 
   @Override
-  public String name() {
-    return this.consumable.name()
+  public String description() {
+    return this.consumable.description()
         + " "
         + determineJoinWord()
         + " ";
   }
 
   private String determineJoinWord() {
-    return this.consumable.name().contains(INITIAL_JOIN_WORD) ?
+    return this.consumable.description().contains(INITIAL_JOIN_WORD) ?
         SUBSEQUENT_JOIN_WORD :
         INITIAL_JOIN_WORD;
   }

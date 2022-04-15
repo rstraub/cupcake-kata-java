@@ -7,8 +7,8 @@ import org.junit.jupiter.api.Test;
 class CandiesTest {
 
   @Test
-  void shouldReturnName() {
-    var result = new Candies(new Cookie()).name();
+  void shouldReturnDescription() {
+    var result = new Candies(new Cookie()).description();
 
     assertThat(result).isEqualTo("🍪 with 🍬");
   }

@@ -7,7 +7,7 @@ final public class Chocolate extends Topping {
   }
 
   @Override
-  public String name() {
-    return super.name() + "🍫";
+  public String description() {
+    return super.description() + "🍫";
   }
 }

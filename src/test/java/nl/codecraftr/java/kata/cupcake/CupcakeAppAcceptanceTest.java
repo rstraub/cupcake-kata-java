@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 class CupcakeAppAcceptanceTest {
 
   @Test
-  void shouldReturnReadableConsumables() {
-    var products = List.of(
+  void shouldReturnNamesForConsumables() {
+    var consumables = List.of(
         new Cupcake(),
         new Cookie(),
         new Chocolate(new Cupcake()),
@@ -28,7 +28,32 @@ class CupcakeAppAcceptanceTest {
         "🧁 with 🍫 and 🥜 and 🍬"
     );
 
-    var result = new CupcakeApp().presentCupcakes(products);
+    var result = new CupcakeApp().presentCupcakes(consumables);
+
+    assertThat(result).isEqualTo(expected);
+  }
+
+  @Test
+  void shouldReturnPricesForConsumables() {
+    var consumables = List.of(
+        new Cupcake(),
+        new Cookie(),
+        new Chocolate(new Cupcake()),
+        new Chocolate(new Cookie()),
+        new Nuts(new Cookie()),
+        new Candies(new Cupcake())
+    );
+
+    var expected = List.of(
+        "$1.00",
+        "$2.00",
+        "$1.10",
+        "$2.10",
+        "$2.20",
+        "$1.15"
+    );
+
+    var result = new CupcakeApp().presentPrices(consumables);
 
     assertThat(result).isEqualTo(expected);
   }
