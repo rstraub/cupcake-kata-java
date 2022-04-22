@@ -1,6 +1,6 @@
 package nl.codecraftr.java.kata.cupcake;
 
-final public class Cookie implements Cake {
+final public class Cookie implements Confectionary {
 
   private static final String name = "🍪";
 

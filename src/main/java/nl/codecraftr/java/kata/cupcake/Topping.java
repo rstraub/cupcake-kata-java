@@ -1,32 +1,32 @@
 package nl.codecraftr.java.kata.cupcake;
 
-sealed abstract class Topping implements Cake permits Sugar, Chocolate, Nuts {
+sealed abstract class Topping implements Confectionary permits Sugar, Chocolate, Nuts {
 
   private static final String INITIAL_JOIN_WORD = "with";
   private static final String SUBSEQUENT_JOIN_WORD = "and";
-  private final Cake cake;
+  private final Confectionary confectionary;
 
-  protected Topping(Cake cake) {
-    this.cake = cake;
+  protected Topping(Confectionary confectionary) {
+    this.confectionary = confectionary;
   }
 
   @Override
   public String description() {
-    return this.cake.description()
+    return this.confectionary.description()
         + " "
         + determineJoinWord()
         + " ";
   }
 
   private String determineJoinWord() {
-    return this.cake.description().contains(INITIAL_JOIN_WORD) ?
+    return this.confectionary.description().contains(INITIAL_JOIN_WORD) ?
         SUBSEQUENT_JOIN_WORD :
         INITIAL_JOIN_WORD;
   }
 
   @Override
   public double price() {
-    return cake.price();
+    return confectionary.price();
   }
 
 }
